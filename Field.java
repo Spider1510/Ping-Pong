@@ -1,10 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class Field extends Frame implements ActionListener,Runnable,KeyListener
+public class Field extends Frame implements Runnable,KeyListener
 {
 	Panel pan;
-	Button bs,be;
+	Label ts;
 	public static int x,y;
 	Color cr;
 	int dx,dy;
@@ -14,17 +14,15 @@ public class Field extends Frame implements ActionListener,Runnable,KeyListener
 	{
 		super(s);
 		pan=new Panel();
-		bs=new Button("START");
-		be=new Button("EXIT");
-		bs.addActionListener(this);
-		be.addActionListener(this);
+		ts=new Label("Press the LEFT arrow key to start the Game..!!");
+		ts.setForeground(Color.WHITE);
+		//ts.setHorizontalAlignment("Center");
 		add(pan,"Center");
 		Panel p=new Panel();
-		p.add(bs);
-		p.add(be);
+		p.add(ts);
 		p.setBackground(Color.BLACK);
 		pan.setBackground(Color.BLACK);
-		add(p,"South");
+		add(p,"North");
 		setSize(700,400);
 		setVisible(true);
 
@@ -103,7 +101,7 @@ public class Field extends Frame implements ActionListener,Runnable,KeyListener
 			catch(Exception e1){}
 		}
 	}
-
+/*
 	public void actionPerformed(ActionEvent e)
 	{
 		Button bp=(Button)e.getSource();
@@ -116,7 +114,7 @@ public class Field extends Frame implements ActionListener,Runnable,KeyListener
 
     	//setFocusable(true);
 	}
-
+*/
 	void move()
 	{
 		Dimension d=pan.getSize();
